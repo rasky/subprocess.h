@@ -30,10 +30,6 @@ jobs:
       if: startsWith(matrix.os, 'ubuntu')
       run: sudo apt-get install -y gcc-10 g++-10 clang
 
-    - name: Setup dependencies (MinGW)
-      if: matrix.compiler == 'gcc' && startsWith(matrix.os, 'windows')
-      uses: egor-tensin/setup-mingw@v2
-
     - name: Configure CMake
       shell: bash
       if: matrix.compiler == 'default'
